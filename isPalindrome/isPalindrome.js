@@ -6,7 +6,7 @@ const isPalindrome = function(x) {
   if (x === 0) {
     return true;
   }
-  
+
   if (typeof x === 'number' && Math.sign(x) !== -1) {
     x = x + "";
     const reverse = Number(x.split("").reverse().join(''));
@@ -18,5 +18,4 @@ const isPalindrome = function(x) {
   return false;
 };
 
-//module.exports = isPalindrome;
-console.log(isPalindrome(121))
+module.exports = isPalindrome;
