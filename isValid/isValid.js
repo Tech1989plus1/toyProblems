@@ -4,8 +4,6 @@
  */
 
 var isValid = (s) => {
-  var bool = true;
-
   if (s === null || s.length < 0) {
     return true;
   }
@@ -14,7 +12,9 @@ var isValid = (s) => {
     const parentheses = s.split("");
     var stack = [];
 
-    parentheses.map((paren) => {
+    for (let i = 0; i < parentheses.length; i++) {
+      const paren = parentheses[i];
+
       if (paren === '[') {
         stack.push(']');
       } else if (paren === '{') {
@@ -22,16 +22,15 @@ var isValid = (s) => {
       } else if (paren === '(') {
         stack.push(')');
       } else if (stack.length === 0 || paren !== stack.pop()) {
-        bool = false;
-        return;
+        return false;
       }
-    });
+    }
     
-    if (stack.length === 0 && bool) {
-      bool = true;
+    if (stack.length === 0) {
+      return true;
     }
   }
-    return bool;
+    return false;
 };
 
 module.exports = isValid;

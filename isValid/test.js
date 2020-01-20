@@ -7,6 +7,10 @@ describe('Is Valid Parentheses', () => {
     expect(isValid('')).to.equal(true);
   });
 
+  it(`Parentheses: "[" to be false`, () => {
+    expect(isValid('[')).to.equal(false);
+  });
+
   it(`Parentheses: "[}" to be false`, () => {
     expect(isValid('[}')).to.equal(false);
   });
