@@ -21,8 +21,7 @@
             str[str.length - 1] = str[indexOf];
             str[indexOf] = temp;
             str.pop();
-            
-            
+            strs[i] = str.toString();
           }
         }
 
@@ -30,12 +29,8 @@
           result+= char;
         }
       })
-
     }
-
     return result;
 };
 
-//module.exports = longestCommonPrefix;
-
-console.log(longestCommonPrefix(["aa","ab"]))
+module.exports = longestCommonPrefix;
